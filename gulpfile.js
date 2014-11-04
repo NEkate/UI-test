@@ -5,13 +5,13 @@ var watch = require('gulp-watch');
 var plumb = require('gulp-plumber');
 
 gulp.task('scss', function () {
-    watch('./css/*.scss', function () {
-        gulp.src('./css/main.scss')
+    watch('css/*.scss', function () {
+        return gulp.src('css/main.scss')
             .pipe(plumb())
             .pipe(sourcemaps.init())
             .pipe(sass())
             .pipe(sourcemaps.write('./', {includeContent: false}))
-            .pipe(gulp.dest('./css'))
-        ;
+            .pipe(gulp.dest('css'))
+            ;
     });
 });

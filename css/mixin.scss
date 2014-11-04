@@ -1,0 +1,34 @@
+@mixin header-background {
+    background: url('../img/header-bg.png'), rgb(249,0,0); /* Old browsers */
+    background: url('../img/header-bg.png'), -moz-linear-gradient(top,  rgba(249,0,0,1) 0%, rgba(255,0,0,1) 30%, rgba(84,0,0,1) 100%); /* FF3.6+ */
+    background: url('../img/header-bg.png'), -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(249,0,0,1)), color-stop(69%,rgba(255,0,0,1)), color-stop(100%,rgba(84,0,0,1))); /* Chrome,Safari4+ */
+    background: url('../img/header-bg.png'), -webkit-linear-gradient(top,  rgba(249,0,0,1) 0%,rgba(255,0,0,1) 30%,rgba(84,0,0,1) 100%); /* Chrome10+,Safari5.1+ */
+    background: url('../img/header-bg.png'), -o-linear-gradient(top,  rgba(249,0,0,1) 0%,rgba(255,0,0,1) 30%,rgba(84,0,0,1) 100%); /* Opera 11.10+ */
+    background: url('../img/header-bg.png'), -ms-linear-gradient(top,  rgba(249,0,0,1) 0%,rgba(255,0,0,1) 30%,rgba(84,0,0,1) 100%); /* IE10+ */
+    background: url('../img/header-bg.png'), linear-gradient(to bottom,  rgba(249,0,0,1) 0%,rgba(255,0,0,1) 30%,rgba(84,0,0,1) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f90000', endColorstr='#540000',GradientType=0 ); /* IE6-9*/
+}
+@mixin  box-shadow($horizontalLength, $verticalLength, $blurRadius, $spread, $color, $inset) {
+    -webkit-box-shadow: $inset $horizontalLength $verticalLength  $blurRadius $spread $color;
+    box-shadow: $inset $horizontalLength $verticalLength  $blurRadius $spread $color;
+}
+
+@mixin  border-radius($x) {
+    -webkit-border-radius: $x;
+    border-radius: $x;
+}
+
+@mixin  border-radius-child($x) {
+    -webkit-border-radius: $x;
+    border-radius: $x;
+
+    > *:first-child {
+        -webkit-border-radius: $x $x 0 0;
+        border-radius: $x $x 0 0;
+    }
+    > *:last-child {
+        -webkit-border-radius: 0 0 $x $x;
+        border-radius: 0 0 $x $x;
+    }
+
+}
