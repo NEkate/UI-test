@@ -106,17 +106,18 @@ header {
             color: #b70000;
             border: none;
         }
+        .yellow-button {
+            float: right;
+        }
 
     }
 
     .yellow-button {
-        display: inline-block;
         @include button-background;
         font-size: 18px;
         color: #960000;
         padding: 7px 9px;
         position: relative;
-        margin-left: 5px;
 
         -webkit-border-radius: 3px;
         border-radius: 3px;
@@ -357,6 +358,189 @@ header {
 
                 &:hover {
                     color: #ffc400;
+                }
+            }
+        }
+    }
+}
+
+main {
+
+    .main-adv {
+        width: 160px;
+        float: left;
+        padding-top: 20px;
+
+        .adv {
+            height: 250px;
+            width: 150px;
+            border: 1px solid #2a2a2a;
+            margin-bottom: 14px;
+        }
+
+        .app-store {
+            background: url("../img/appStore.png") no-repeat;
+            height: 52px;
+        }
+
+        .facebook-platform {
+            width: 150px;
+            height: 258px;
+            border: 1px solid #2a2a2a;
+            margin-top: 14px;
+        }
+    }
+
+    .topics {
+        margin: 40px 0;
+        border-top: 2px groove #FFFFFF;
+
+        .left-content {
+            width: 540px;
+            margin: 0 10px;
+            float: left;
+        }
+
+        .right-content {
+            width: 220px;
+            margin: 0 10px;
+            float: right;
+            .title {
+                background: #e4e4e4;
+                color: #7a7a7a;
+            }
+
+            .text {
+                color: #595959;
+            }
+        }
+
+        .location {
+            width: 540px;
+            margin: 10px;
+            float: left;
+            border-top: 2px groove #FFFFFF;
+
+            .map {
+                width: 300px;
+                height: 230px;
+                border: 1px solid #2a2a2a;
+                margin: 40px 10px 0 10px;
+                float: left;
+            }
+
+            .location-info {
+                background: url('../img/maps-point.png') no-repeat top left;
+                float: right;
+                color: #7d7d7d;
+                font-size: 11pt;
+                width: 220px;
+                padding-left: 50px;
+                margin-top: 40px;
+
+                a {
+                    display: block;
+                    color: #fd0000;
+
+                    &:first-child {
+                        margin-top: 13px;
+                    }
+                }
+            }
+        }
+
+    }
+
+    .title {
+        background: #960000;
+        @include border-radius(3px);
+        color: #FFFFFF;
+        text-transform: uppercase;
+        width: 150px;
+        text-align: center;
+        padding: 14px 0;
+        margin: -21px 0 20px 20px;
+        font-size: 12pt;
+    }
+
+    .text {
+        clear: both;
+        font-size: 11pt;
+        line-height: 24px;
+        padding-bottom: 27px;
+
+        .more {
+            color: #f90000;
+        }
+    }
+
+    .topics-wrap {
+        overflow: hidden;
+    }
+
+    .promo {
+        background: #2f2f2f;
+        @include border-radius(5px);
+        padding-top: 33px;
+        overflow: hidden;
+        margin-top: 70px;
+
+        .promo-wrap {
+            border-top: 2px groove #444;
+
+            .title {
+                background: #464646;
+                padding-left: 16px;
+                padding-right: 16px;
+                width: 300px;
+            }
+
+            .text {
+                display: inline-block;
+                width: 540px;
+                margin: 0 10px;
+                color: #c7c7c7;
+                padding-bottom: 0;
+
+                .more {
+                    color: #FFFFFF;
+                }
+            }
+
+            .promo-img {
+                width: 540px;
+                height: 305px;
+                margin: 10px;
+                float: left;
+            }
+
+            .news-list {
+                float: right;
+                width: 240px;
+                margin: 10px 0;
+                padding: 0 10px;
+                border-left: 2px groove #444;
+
+                .news {
+                    margin-bottom: 32px;
+
+                    .news-img {
+                        display: inline-block;
+                        vertical-align: top;
+                    }
+
+                    .news-content {
+                        display: inline-block;
+                        width: 140px;
+                        font-size: 9pt;
+                        color: #FFFFFF;
+                        line-height: 14px;
+                        vertical-align: top;
+
+                        .news-title {
+                            color: #ffc400;
+                        }
+                    }
                 }
             }
         }
