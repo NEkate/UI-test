@@ -8,6 +8,19 @@
     background: url('../img/header-bg.png'), linear-gradient(to bottom,  rgba(249,0,0,1) 0%,rgba(255,0,0,1) 30%,rgba(84,0,0,1) 100%); /* W3C */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f90000', endColorstr='#540000',GradientType=0 ); /* IE6-9*/
 }
+
+@mixin button-background {
+    background: rgb(255,196,0); /* Old browsers */
+    background: -moz-linear-gradient(top,  rgba(255,196,0,1) 0%, rgba(255,195,0,1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,196,0,1)), color-stop(100%,rgba(255,195,0,1))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  rgba(255,196,0,1) 0%,rgba(255,195,0,1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  rgba(255,196,0,1) 0%,rgba(255,195,0,1) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  rgba(255,196,0,1) 0%,rgba(255,195,0,1) 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  rgba(255,196,0,1) 0%,rgba(255,195,0,1) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffc400', endColorstr='#ffc300',GradientType=0 ); /* IE6-9 */
+
+}
+
 @mixin  box-shadow($horizontalLength, $verticalLength, $blurRadius, $spread, $color, $inset) {
     -webkit-box-shadow: $inset $horizontalLength $verticalLength  $blurRadius $spread $color;
     box-shadow: $inset $horizontalLength $verticalLength  $blurRadius $spread $color;
@@ -16,6 +29,11 @@
 @mixin  border-radius($x) {
     -webkit-border-radius: $x;
     border-radius: $x;
+}
+
+@mixin  border-radius-left($x) {
+    -webkit-border-radius: $x 0 0 $x;
+    border-radius: $x 0 0 $x;
 }
 
 @mixin  border-radius-child($x) {
