@@ -20,7 +20,7 @@ body {
 }
 
 header {
-    @include header-background;
+    @include gradient-background(rgb(249, 0, 0), url('../img/header-bg.png'), rgba(249, 0, 0, 1), rgba(255, 0, 0, 1), rgba(84, 0, 0, 1), 30%, '#f90000', '#540000');
     border-bottom: 1px solid #9d7070;
     padding: 41px 0 10px;
 
@@ -98,8 +98,7 @@ header {
 
         input {
             display: inline-block;
-            -webkit-box-shadow: inset 0 0 3px 3px #CFCFCF;
-            box-shadow: inset 0 0 3px 3px #CFCFCF;
+            @include box-shadow(0, 0, 3px, 3px, #CFCFCF, inset);
             padding: 9px 67px 7px 15px;
             margin-left: 42px;
 
@@ -119,16 +118,14 @@ header {
         padding: 7px 9px;
         position: relative;
 
-        -webkit-border-radius: 3px;
-        border-radius: 3px;
+        @include border-radius(3px);
 
         &:before {
             content: ' ';
             @include button-background;
             height: 11px;
             width: 11px;
-            -webkit-border-radius: 50%;
-            border-radius: 50%;
+            @include border-radius(50%);
             position: absolute;
             left: -5px;
             top: 32%;
@@ -241,7 +238,8 @@ header {
                     bottom: 10px;
                     right: 10px;
                     left: 10px;
-                    .total {
+
+                    > li {
                         display: inline-block;
                         background: #212121;
                         @include border-radius(8px);
@@ -250,12 +248,33 @@ header {
                         text-align: center;
                         font-size: 22pt;
                         font-weight: bold;
+                        margin-left: 10px;
 
                         .title {
                             color: #5b5b5b;
                             text-align: right;
                             margin-bottom: 2px;
                             font-size: 10pt;
+                            display: block;
+                        }
+
+                        &:nth-child(2) {
+                            &:after {
+                                content: '_';
+                                color: #FFFFFF;
+                                font-size: 10pt;
+                                position: absolute;
+                                right: 129px;
+                            }
+
+                            &:before {
+                                content: '_';
+                                color: #FFFFFF;
+                                font-size: 10pt;
+                                position: absolute;
+                                left: 127px;
+                                top: 18px;
+                            }
                         }
                     }
                 }
@@ -341,11 +360,10 @@ header {
         }
 
         .left-bar {
-            color: #929292;
             font-size: 12pt;
             margin-top: 20px;
 
-            li {
+            > li {
                 background: #2a2a2a;
                 @include border-radius-left(4px);
                 width: 160px;
@@ -355,8 +373,11 @@ header {
                 &:last-child {
                     margin-bottom: 0;
                 }
+                a {
+                    color: #929292;
+                }
 
-                &:hover {
+                a:hover {
                     color: #ffc400;
                 }
             }
@@ -364,7 +385,8 @@ header {
     }
 }
 
-main {
+.main {
+    margin-bottom: 25px;
 
     .main-adv {
         width: 160px;
@@ -521,7 +543,7 @@ main {
                 padding: 0 10px;
                 border-left: 2px groove #444;
 
-                .news {
+                > li {
                     margin-bottom: 32px;
 
                     .news-img {
@@ -547,17 +569,90 @@ main {
     }
 }
 
+footer {
+    @include gradient-background(rgb(56, 56, 56), url('../img/footer-bg.png'), rgba(56, 56, 56, 1), rgba(53, 54, 54, 1), rgba(0, 0, 0, 1), 32%, '#383838', '#000000');
+    border-bottom: 1px solid #121212;
+    overflow: hidden;
+    padding-bottom: 25px;
+    .centering {
+        padding: 0 10px;
+
+        > * {
+            width: 215px;
+            margin: 0 10px;
+            float: left;
+        }
+    }
+
+    .red-line {
+        background: url("../img/footer-red-bg.png"), #db0000;
+        height: 34px;
+        border-bottom: 1px solid #484848;
+        margin-bottom: 32px;
+    }
+
+    .question .content {
+        background: url("../img/question.png") no-repeat left;
+    }
+
+    .business .content {
+        background: url("../img/business.png") no-repeat left;
+    }
+
+    .dealin-title {
+        color: #ffc400;
+        font-weight: bold;
+        font-size: 18pt;
+    }
+
+    .bottom-bar li {
+        border-bottom: 1px solid #472122;
+        padding: 16px 0 6px 0;
+
+        a {
+            color: #FFFFFF;
+            font-size: 10pt;
+        }
+    }
+
+    .title {
+        color: #df0000;
+        font-weight: bold;
+        margin-bottom: 10px;
+        font-size: 22pt;
+    }
+
+    .content {
+        padding: 10px 0 10px 70px;
+        color: #FFFFFF;
+        font-size: 12pt;
+        line-height: 22px;
+    }
+
+    button {
+        background: #df0000;
+        @include border-radius(3px);
+        padding: 9px 0 9px 10px;
+        width: 100%;
+
+        font-size: 10pt;
+        font-weight: bold;
+        color: #FFFFFF;
+        text-align: left;
+
+    }
+
+}
+
 .ie {
     header {
-
         .yellow-button {
             &:before {
                 content: ' ';
                 @include button-background;
                 height: 11px;
                 width: 11px;
-                -webkit-border-radius: 50%;
-                border-radius: 50%;
+                @include border-radius(50%);
                 position: absolute;
                 left: -5px;
                 top: 32%;
@@ -566,6 +661,16 @@ main {
 
         .main-deal .price-table .note {
             margin-top: 5px;
+        }
+
+        .price-counter > li:nth-child(2) {
+           &:after {
+                content: '_';
+                color: #FFFFFF;
+                font-size: 10pt;
+                position: absolute;
+                right: 128px !important;
+            }
         }
     }
 }

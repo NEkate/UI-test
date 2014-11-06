@@ -5,6 +5,10 @@
     <title>DealIN</title>
     <link rel="stylesheet" href="css/reset.css"/>
     <link rel="stylesheet" href="css/main.css"/>
+
+    <!--[if lt IE 9]>
+    <script src="bower_components/html5shiv/dist/html5shiv.js"></script>
+    <![endif]-->
 </head>
 <body>
 <header>
@@ -20,7 +24,7 @@
             <div class="sign-in-bar">
                 <p class="slogan">Προσφορές που χρειάζεσαι...<span class="bold-text">είσαι μέσα;</span></p><input
                     type="text" placeholder="συμπλήρωσε το email σου"/>
-                <button class="yellow-button">Εγγραφή</button>
+                <a href="#" class="yellow-button">Εγγραφή</a>
             </div>
         </div>
     </div>
@@ -32,9 +36,9 @@
                 <div class="day">24/11</div>
             </div>
             <menu class="left-bar">
-                <li>Προηγούμενα Deal</li>
-                <li>Πως λειτουργεί το Dealin</li>
-                <li>Εγγραφή στο Dealin</li>
+                <li><a href="#">Προηγούμενα Deal</a></li>
+                <li><a href="#">Πως λειτουργεί το Dealin</a></li>
+                <li><a href="#">Εγγραφή στο Dealin</a></li>
             </menu>
         </div>
         <div class="content-box">
@@ -60,14 +64,15 @@
                     </div>
                     <div class="price-table">
                         <div class="price">23,15€</div>
-                        <div class="yellow-button">Αγόρασέ το</div>
+                        <a href="#" class="yellow-button">Αγόρασέ το</a>
+
                         <div class="note">Αγόρασέ το ως δώρο</div>
 
-                        <div class="price-counter">
-                            <div class="total"><h4 class="title">αξια</h4>52,50€</div>
-                            <div class="total"><h4 class="title">εκπτωση</h4>25€</div>
-                            <div class="total"><h4 class="title">αγορεσ</h4>12</div>
-                        </div>
+                        <ul class="price-counter">
+                            <li><span class="title">αξια</span>52,50€</li>
+                            <li><span class="title">εκπτωση</span>25€</li>
+                            <li><span class="title">αγορεσ</span>12</li>
+                        </ul>
                     </div>
 
                 </div>
@@ -82,7 +87,7 @@
         </div>
     </div>
 </header>
-<main>
+<div class="main">
     <div class="centering">
         <div class="main-adv">
             <div class="adv"></div>
@@ -117,7 +122,8 @@
                     </div>
                     <div class="location">
                         <div class="location-wrap">
-                            <h3 class="title"><span>πωσ θα πασ</span></h3>
+                            <h3 class="title">πωσ θα πασ</h3>
+
                             <div class="map"></div>
                             <p class="location-info">
                                 Allou! Fun Park Κηφισού & Πέτρου Ράλλη,
@@ -142,16 +148,7 @@
                     <img class="promo-img" src="img/promo.jpg"/>
 
                     <ul class="news-list">
-                        <li class="news"><img class="news-img" src="img/news-img.jpg"/>
-
-                            <div class="news-content">
-                                <h4 class="news-title">Allou! Fun Park</h4>
-
-                                <p class="content">2 εισιτήρια για οποιαδήποτε προβολή σε όποιο Village Center
-                                    θέλετε με έκπτωση 25%</p>
-                            </div>
-                        </li>
-                        <li class="news">
+                        <li>
                             <img class="news-img" src="img/news-img.jpg"/>
 
                             <div class="news-content">
@@ -161,7 +158,18 @@
                                     θέλετε με έκπτωση 25%</p>
                             </div>
                         </li>
-                        <li class="news"><img class="news-img" src="img/news-img.jpg"/>
+                        <li>
+                            <img class="news-img" src="img/news-img.jpg"/>
+
+                            <div class="news-content">
+                                <h4 class="news-title">Allou! Fun Park</h4>
+
+                                <p class="content">2 εισιτήρια για οποιαδήποτε προβολή σε όποιο Village Center
+                                    θέλετε με έκπτωση 25%</p>
+                            </div>
+                        </li>
+                        <li>
+                            <img class="news-img" src="img/news-img.jpg"/>
 
                             <div class="news-content">
                                 <h4 class="news-title">Allou! Fun Park</h4>
@@ -176,8 +184,45 @@
         </div>
     </div>
 
-</main>
-<footer></footer>
+</div>
+<footer>
+    <div class="red-line"></div>
+    <div class="centering">
+        <div class="question">
+            <h3 class="title">Πως λειτουργεί;</h3>
+
+            <p class="content">Επικοινωνήστε μαζί μας και μάθετε τι μπορεί να κάνει το Dealin για εσάς!</p>
+            <button>Συχνές ερωτήσεις »</button>
+        </div>
+        <div class="business">
+            <h3 class="title">Έχετε επιχείρηση; </h3>
+
+            <p class="content">Επικοινωνήστε μαζί μας και μάθετε τι μπορεί να κάνει το Dealin για εσάς!</p>
+            <button>Περισσότερες πληροφορίες »</button>
+        </div>
+        <div class="dealin">
+            <h3 class="dealin-title">Dealin</h3>
+            <menu class="bottom-bar">
+                <li><a href="#">Ποιοι είμαστε</a></li>
+                <li><a href="#">Terms of Use</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Copyright</a></li>
+                <li><a href="#">Skype chat</a></li>
+            </menu>
+        </div>
+        <div class="my-dealin">
+            <h3 class="dealin-title">My Dealin</h3>
+            <menu class="bottom-bar">
+                <li><a href="#">O Λογαριασμός μου</a></li>
+                <li><a href="#">Οι αγορές μου</a></li>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">Είσοδος / Εγγραφή</a></li>
+                <li><a href="#">Επικοινωνία</a></li>
+                <li><a href="#">Κατάθεση σε τράπεζα</a></li>
+            </menu>
+        </div>
+    </div>
+</footer>
 
 <script src="js/modernizr-ie.js"></script>
 </body>
